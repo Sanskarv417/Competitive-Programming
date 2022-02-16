@@ -13,7 +13,7 @@
  */
 class Solution {
 public:
-    void postorder(TreeNode *root,vector<int> &v)
+    void preorder(TreeNode *root,vector<int> &v)
     {
         if(!root)
             return;
@@ -23,7 +23,7 @@ public:
     }
     vector<int> preorderTraversal(TreeNode* root) {
         vector<int> ans;
-        postorder(root,ans);
+        preorder(root,ans);
         return ans;
     }
 };
