@@ -18,3 +18,23 @@ public:
         return ans;
     }
 };
+
+class Solution {
+public:
+    void func(int i,vector<int> &v,vector<int> &a,vector<vector<int>> &ans)
+    {
+        ans.push_back(v);
+        for(int j=i;j<a.size();j++)
+        {
+            v.push_back(a[j]);
+            func(j+1,v,a,ans);
+            v.pop_back();
+        }
+    }
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> ans;
+        vector<int> v;
+        func(0,v,nums,ans);
+        return ans;
+    }
+};
